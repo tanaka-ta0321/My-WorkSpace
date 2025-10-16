@@ -1,0 +1,88 @@
+body{
+margin: 20px; /* bodyの外側の余白を指定する */
+padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
+}
+
+
+
+        /*ヘッダー*/
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #30a7ec;
+  border: 2px solid #cca90c; /* 下部に緑のボーダーを追加 */
+  color: #000000;
+  box-sizing: border-box; /* 不明*/
+  border-radius: 20px;
+  z-index: 1000; /* 他の要素より前面に表示 */
+  opacity: 0.8; /* 透明度を少し下げる */
+
+}
+
+
+.Header #datetime {
+  position: absolute;
+  right: 20px; /* 右端に固定 */
+  top: 10px; /* 上端に固定 */
+  font-size: 20px;
+  white-space: nowrap;
+  color: #722f0f;
+}
+
+.logo span {
+  color: #1cd52e; /* "WorkSpace"の文字色 */
+}
+
+
+
+        /* 汎用クラス */
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* HTML内の改行やスペースをそのまま表示 */
+.preserve {
+	white-space: pre-wrap; 
+	word-break: break-word;
+}
+
+/* 長い単語を強制的に改行 */
+.break {
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+
+
+        /*リンク集*/
+
+.links ul {
+	list-style-type: square;
+	padding: 0;
+	margin: 0;
+}
+
+.links a {
+	color: #0366d6;
+	text-decoration: none;
+    transition: .3s;
+}
+
+.links a:hover,
+.links a:focus {
+	color: rgb(250, 89, 132);
+    transition: .3s;
+}
+
+.links ul {
+  width: fit-content;
+  color: #668ad8;/*文字色*/
+  border: dashed 2px #668ad8;/*破線 太さ 色*/
+  background: #f1f8ff; /*背景色*/
+  padding: 0.5em 0.5em 0.5em 2em;
+}
