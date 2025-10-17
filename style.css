@@ -1,40 +1,59 @@
-body{
-margin: 20px; /* bodyの外側の余白を指定する */
-padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:左) */
-}
-
-
-
         /*ヘッダー*/
-.Header {
+/* .Header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 10px 20px;
   background-color: #30a7ec;
-  border: 2px solid #cca90c; /* 下部に緑のボーダーを追加 */
+  border: 2px solid #cca90c; 
   color: #000000;
-  box-sizing: border-box; /* 不明*/
+  box-sizing: border-box; 
   border-radius: 20px;
-  z-index: 1000; /* 他の要素より前面に表示 */
-  opacity: 0.8; /* 透明度を少し下げる */
+  z-index: 1000; 
+  opacity: 0.8; 
 
-}
+} */
 
 
-.Header #datetime {
-  position: absolute;
+#datetime {
+  position: fixed;
   right: 20px; /* 右端に固定 */
   top: 10px; /* 上端に固定 */
   font-size: 20px;
   white-space: nowrap;
   color: #722f0f;
+  background-color: #ffffff;
+  border: 2px solid #000000; 
 }
 
 .logo span {
-  color: #1cd52e; /* "WorkSpace"の文字色 */
+  color: #ed2516; /* "WorkSpace"の文字色 */
 }
+
+div#spWrapper > nav {
+    display: block;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 16vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif; */
+    font-size: 14px;
+    line-height: 1.6em;
+  }
+ div#spWrapper > nav > h1#logo {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7.5vw;
+    width: 43vw;
+    height: 3.7vw;
+    margin: auto 0;
+  }
 
 
 
@@ -85,4 +104,18 @@ padding: 50px 10px 50px 10px; /* bodyの内側余白を指定する(上:右:下:
   border: dashed 2px #668ad8;/*破線 太さ 色*/
   background: #f1f8ff; /*背景色*/
   padding: 0.5em 0.5em 0.5em 2em;
+}
+
+/* 背景画像: 下記は推奨の基本スタイル例です。
+   - 背景の表示方法は cover（画面全体を覆う）/contain（画像全体を表示）を切替可能
+   - 固定（固定背景）やスクロール（通常）もオプションで切替可能
+*/
+body {
+
+  background-image: url("background-01.png");
+  background-color: #f7fbff; /* 画像が読み込めないときのフォールバック色 */
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: cover; /* cover / contain に切り替え可能 */
+  background-attachment: scroll; /* fixed にすると背景が固定されます */
 }
