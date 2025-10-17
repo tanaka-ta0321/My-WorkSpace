@@ -27,10 +27,6 @@
   border: 2px solid #000000; 
 }
 
-.logo span {
-  color: #ed2516; /* "WorkSpace"の文字色 */
-}
-
 div#spWrapper > nav {
     display: block;
     z-index: 0;
@@ -41,10 +37,9 @@ div#spWrapper > nav {
     height: 16vw;
     background-color: rgba(0, 0, 0, 0.3);
     /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif; */
-    font-size: 14px;
     line-height: 1.6em;
   }
- div#spWrapper > nav > h1#logo {
+ div#spWrapper > nav > div#logo > h1 {
     display: block;
     position: absolute;
     top: 0;
@@ -53,8 +48,61 @@ div#spWrapper > nav {
     width: 43vw;
     height: 3.7vw;
     margin: auto 0;
+    color: #098cc8;
+    font-size: 40px;
   }
-
+  div#spWrapper > nav > div#logo > h1 span { /* 2025/10/17自力解決☆ */
+    color: #ffbb00;
+  }
+  div#spWrapper > nav > div#nav_switch {
+    display: inline-block;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 5.6vw;
+    bottom: 0;
+    width: 8.5vw;
+    height: 5.9vw;
+    margin: auto 0;
+  }
+  div#spWrapper > nav > div#nav_switch > span {
+    -webkit-box-sizing: border-box;
+    -webkit-transition: opacity 0.4s ease, -webkit-transform 0.4s ease;
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 9.1%;
+    border-radius: 4px;
+    background-color: #cfcfcf;
+    transition: opacity 0.4s ease, -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease, -webkit-transform 0.4s ease;
+  }
+  div#spWrapper > nav > div#nav_switch > span:nth-of-type(1) {
+    top: 0;
+  }
+  div#spWrapper > nav > div#nav_switch > span:nth-of-type(2) {
+    top: 45.5%;
+  }
+  div#spWrapper > nav > div#nav_switch > span:nth-of-type(3) {
+    bottom: 0;
+  }
+  div#spWrapper > nav > div#nav_switch.active > span:nth-of-type(1) {
+    -webkit-transform: translateY(2.6vw) rotate(-45deg);
+    transform: translateY(2.6vw) rotate(-45deg);
+  }
+  div#spWrapper > nav > div#nav_switch.active > span:nth-of-type(2) {
+    opacity: 0;
+  }
+  div#spWrapper > nav > div#nav_switch.active > span:nth-of-type(3) {
+    -webkit-transform: translateY(-2.6vw) rotate(45deg);
+    transform: translateY(-2.6vw) rotate(45deg);
+  }
+  div#spWrapper > nav > div#nav_switch.active + div#sidemenu_list {
+    right: 0;
+  }
 
 
         /* 汎用クラス */
