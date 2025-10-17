@@ -35,7 +35,7 @@ div#spWrapper > nav {
     left: 0;
     width: 100%;
     height: 16vw;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(76, 255, 172, 0.3);
     /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif; */
     line-height: 1.6em;
   }
@@ -65,9 +65,7 @@ div#spWrapper > nav {
     height: 5.9vw;
     margin: auto 0;
   }
-  div#spWrapper > nav > div#nav_switch > span {
-    -webkit-box-sizing: border-box;
-    -webkit-transition: opacity 0.4s ease, -webkit-transform 0.4s ease;
+  div#spWrapper > nav > div#nav_switch > span { 
     box-sizing: border-box;
     display: inline-block;
     position: absolute;
@@ -128,25 +126,29 @@ div#spWrapper > nav {
 
         /*リンク集*/
 
-.links ul {
+div#spWrapper > main > #links ul {
 	list-style-type: square;
 	padding: 0;
 	margin: 0;
 }
 
-.links a {
+div#spWrapper > main > #links a {
 	color: #0366d6;
 	text-decoration: none;
     transition: .3s;
 }
 
-.links a:hover,
-.links a:focus {
+div#spWrapper > main > #links a:hover,
+div#spWrapper > main > #links a:focus {
 	color: rgb(250, 89, 132);
     transition: .3s;
 }
 
-.links ul {
+div#spWrapper > main > #links a:active{
+    text-decoration: underline;
+}
+
+div#spWrapper > main > #links ul {
   width: fit-content;
   color: #668ad8;/*文字色*/
   border: dashed 2px #668ad8;/*破線 太さ 色*/
