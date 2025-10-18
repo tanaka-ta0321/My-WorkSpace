@@ -162,7 +162,7 @@ div#spWrapper > main > #links ul {
 */
 body {
 
-  background-image: url("images/background-01.png");
+  background-image: url(".images/background-01.png");
   background-color: #f7fbff; /* 画像が読み込めないときのフォールバック色 */
   background-repeat: repeat;
   background-position: center center;
