@@ -20,7 +20,7 @@
   position: fixed;
   right: 20px; /* 右端に固定 */
   bottom: 10px; /* 上端に固定 */
-  font-size: 2vm;
+  font-size: 20px;
   white-space: nowrap;
   color: #722f0f;
   background-color: #ffffff;
@@ -28,15 +28,14 @@
 }
 
 div#spWrapper > nav {
-    display: block;
+    display: inline-block;
     z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     min-height: 80px;
-    background-color: rgba(77, 78, 78, 0.3);
-    /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Meiryo, sans-serif; */
+    background: rgba(40, 40, 40, 0.7);
     line-height: 1.6em;
   }
  div#spWrapper > nav > div#logo > h1 {
@@ -46,8 +45,9 @@ div#spWrapper > nav {
     width: 43vw;
     height: 2vw;
     margin: 20px 0;
-    color: #098cc8;
+    color: #00c6ff;
     font-size: 36px;
+    letter-spacing: 1px;
   }
   div#spWrapper > nav > div#logo > h1 span { /* 2025/10/17自力解決☆ */
     color: #ffbb00;
@@ -62,6 +62,7 @@ div#spWrapper > nav > div#nav_switch {
   width: 48px;   /* 固定幅 */
   height: 36px;  /* 固定高さ */
   margin: auto 0;
+  cursor: pointer;
 }
 
   /* 共通設定 */
@@ -75,6 +76,7 @@ div#spWrapper > nav > div#nav_switch > span {
   border-radius: 4px;
   background-color: #cfcfcf;
   transition: transform 0.4s ease, opacity 0.4s ease;
+  white-space: nowrap;
 }
 
 /* 各バーの初期位置 */
@@ -130,8 +132,24 @@ div#spWrapper > nav > div#nav_switch.active + div#sidemenu_list {
 
         /*リンク集*/
 
+div#spWrapper > main > #links {
+  position: relative;
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  width: min(90%, 200px);
+}
+
+div#spWrapper > main > #links h2 {
+  color: #0366d6;
+  text-align: center;
+  border-bottom: 2px solid #0366d6;
+  padding-bottom: .5rem;
+}
 div#spWrapper > main > #links ul {
-	list-style-type: square;
+	list-style-type: circle;
 	padding: 0;
 	margin: 0;
 }
@@ -142,8 +160,7 @@ div#spWrapper > main > #links a {
     transition: .3s;
 }
 
-div#spWrapper > main > #links a:hover,
-div#spWrapper > main > #links a:focus {
+div#spWrapper > main > #links a:hover {
 	color: rgb(250, 89, 132);
     transition: .3s;
 }
@@ -155,9 +172,65 @@ div#spWrapper > main > #links a:active{
 div#spWrapper > main > #links ul {
   width: fit-content;
   color: #668ad8;/*文字色*/
-  border: dashed 2px #668ad8;/*破線 太さ 色*/
-  background: #f1f8ff; /*背景色*/
   padding: 0.5em 0.5em 0.5em 2em;
+}
+
+
+
+
+#todoapp {
+  position: relative;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin: auto;
+  width: 90%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#tasklist {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+#tasklist li {
+  padding: .3rem 0;
+}
+
+#newtasktext {
+  width: 70%;
+  padding: .4rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+#newtaskaddbutton,
+#newtaskremovebutton {
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: .5rem .8rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+#newtaskaddbutton:hover {
+  background-color: #00aaff;
+}
+
+#newtaskremovebutton:hover {
+  background-color: #ff5050;
+}
+
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #555;
+  padding: 1rem 0;
 }
 
 /* 背景画像: 下記は推奨の基本スタイル例です。
@@ -165,11 +238,11 @@ div#spWrapper > main > #links ul {
    - 固定（固定背景）やスクロール（通常）もオプションで切替可能
 */
 body {
-
-  background-image: url("../images/background-01.png");
-  background-color: #f7fbff; /* 画像が読み込めないときのフォールバック色 */
-  background-repeat: repeat;
-  background-position: center center;
-  background-size: cover; /* cover / contain に切り替え可能 */
-  background-attachment: scroll; /* fixed にすると背景が固定されます */
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background: linear-gradient(135deg, rgba(120,180,255,0.2), rgba(255,255,255,0.9)),
+              url("../images/background-01.png") center/cover no-repeat fixed;
+  color: #222;
+  line-height: 1.6;
 }

@@ -1,0 +1,187 @@
+/* ===== MyPortalWorkSpace Modern CSS ===== */
+
+/* 全体レイアウト */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background: linear-gradient(135deg, rgba(120,180,255,0.2), rgba(255,255,255,0.9)),
+              url("../images/background-01.png") center/cover no-repeat fixed;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* オーバーレイ（必要ならON） */
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+/* ナビゲーションバー */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 70px;
+  background: rgba(40, 40, 40, 0.7);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3vw;
+}
+
+#logo h1 {
+  font-size: 1.8rem;
+  color: #00c6ff;
+  letter-spacing: 1px;
+}
+
+#logo h1 span {
+  color: #ffca28;
+}
+
+/* メニューボタン（ハンバーガー） */
+#nav_switch {
+  width: 40px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+}
+#nav_switch span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+#nav_switch span:nth-child(1) { top: 0; }
+#nav_switch span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+#nav_switch span:nth-child(3) { bottom: 0; }
+#nav_switch.active span:nth-child(1) { transform: translateY(12px) rotate(-45deg); }
+#nav_switch.active span:nth-child(2) { opacity: 0; }
+#nav_switch.active span:nth-child(3) { transform: translateY(-12px) rotate(45deg); }
+
+/* ===== メイン ===== */
+main {
+  margin-top: 100px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* リンク集 */
+#links {
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  width: min(90%, 700px);
+}
+
+#links h2 {
+  color: #0366d6;
+  text-align: center;
+  border-bottom: 2px solid #0366d6;
+  padding-bottom: .5rem;
+}
+
+#links ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+#links li {
+  margin: .5rem 0;
+}
+
+#links a {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .3s;
+}
+
+#links a:hover {
+  color: #f66;
+}
+
+/* ToDoリスト */
+#todoapp {
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  width: min(90%, 600px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#tasklist {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+#tasklist li {
+  padding: .3rem 0;
+}
+
+#newtasktext {
+  width: 70%;
+  padding: .4rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+#newtaskaddbutton,
+#newtaskremovebutton {
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: .5rem .8rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+#newtaskaddbutton:hover {
+  background-color: #00aaff;
+}
+
+#newtaskremovebutton:hover {
+  background-color: #ff5050;
+}
+
+/* 日付時刻表示 */
+#datetime {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  background: rgba(255,255,255,0.8);
+  border: 2px solid #000;
+  padding: .4rem .8rem;
+  border-radius: 8px;
+  font-size: clamp(14px, 2vw, 18px);
+  color: #333;
+  font-weight: bold;
+}
+
+/* フッター */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #555;
+  padding: 1rem 0;
+}

@@ -48,17 +48,17 @@
                         </li>
                     </ul>
                 </div>
-                <span class="material-symbols-outlined">
-                    home
-                </span>
+
                 <div id="todoapp">
-                    <ul>
+                    <ul id="tasklist">
                         <li><input type="checkbox">html</li>
                         <li><input type="checkbox">css</li>
                         <li><input type="checkbox">javascript</li>
+                        <li><input type="checkbox">node.js</li>
                     </ul>
                     <input type="text" id="newtasktext" placeholder="新しいタスクを追加">
                     <input type="button" value="追加" id="newtaskaddbutton">
+                    <input type="button" value="削除" id="newtaskremovebutton">
                 </div>
             </main>
 
@@ -83,25 +83,7 @@
         </div>
 
 
-        <script>
-            function updateDateTime() {
-                const now = new Date();
-                const week_ja = ["日", "月", "火", "水", "木", "金", "土"];
-                const year = now.getFullYear();
-                const month = now.getMonth() + 1;
-                const day = now.getDate();
-                const week = week_ja[now.getDay()];
-                const hour = String(now.getHours()).padStart(2, "0");
-                const minute = String(now.getMinutes()).padStart(2, "0");
-                const second = String(now.getSeconds()).padStart(2, "0");
-
-                document.getElementById("datetime").textContent =
-                    `${year}/${month}/${day}(${week}) ${hour}:${minute}:${second}`;
-            }
-
-            updateDateTime();
-            setInterval(updateDateTime, 1000); // 1秒ごとに更新
-        </script>
+        <script src="scripts/script.js"></script>
     </body>
 
 </html>
