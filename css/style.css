@@ -175,38 +175,16 @@ div#spWrapper > main > #links ul {
   padding: 0.5em 0.5em 0.5em 2em;
 }
 
-
-
-
-#todoapp {
-  position: relative;
-  background: rgba(255,255,255,0.85);
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  margin: auto;
-  width: 90%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-#tasklist {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1rem;
-}
-
-#tasklist li {
-  padding: .3rem 0;
-}
-
-#newtasktext {
-  width: 70%;
+div#spWrapper > main > #links > #newlinknametext,
+div#spWrapper > main > #links > #newlinkurltext {
+  width: 100%;
   padding: .4rem;
   border-radius: 6px;
   border: 1px solid #aaa;
 }
 
-#newtaskaddbutton,
-#newtaskremovebutton {
+div#spWrapper > main > #links > #linkaddbutton,
+div#spWrapper > main > #links > #linkremovebutton {
   background-color: #0078ff;
   color: white;
   border: none;
@@ -217,11 +195,61 @@ div#spWrapper > main > #links ul {
   transition: background-color .3s;
 }
 
-#newtaskaddbutton:hover {
+div#spWrapper > main > #links > #linkaddbutton:hover {
   background-color: #00aaff;
 }
 
-#newtaskremovebutton:hover {
+div#spWrapper > main > #links > #linkremovebutton:hover {
+  background-color: #ff5050;
+}
+
+
+
+
+div#spWrapper > main > #todoapp {
+  position: relative;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin: auto;
+  width: 90%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+div#spWrapper > main > #tasklist {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+div#spWrapper > main > #tasklist li {
+  padding: .3rem 0;
+}
+
+div#spWrapper > main > div#todoapp > #newtasktext {
+  width: 70%;
+  padding: .4rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+div#spWrapper > main > div#todoapp > #newtaskaddbutton,
+div#spWrapper > main > div#todoapp > #newtaskremovebutton {
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: .5rem .8rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+div#spWrapper > main > div#todoapp > #newtaskaddbutton:hover {
+  background-color: #00aaff;
+}
+
+div#spWrapper > main > div#todoapp > #newtaskremovebutton:hover {
   background-color: #ff5050;
 }
 

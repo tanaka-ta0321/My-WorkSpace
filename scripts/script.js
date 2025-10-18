@@ -1,5 +1,7 @@
 'use strict';
 
+
+// tasklist部分の処理-------------------------------------------------------------
 const taskAddButton = document.getElementById('newtaskaddbutton');
 const taskRemoveButton = document.getElementById('newtaskremovebutton');
 const taskList = document.getElementById('tasklist');
@@ -23,22 +25,52 @@ taskRemoveButton.addEventListener('click', () => {
   const checkedTasks = taskList.querySelectorAll('input[type="checkbox"]:checked');
   checkedTasks.forEach(task => task.parentElement.remove());
 });
+//------------------------------------------------------------------------------
 
+// linklist部分の処理-------------------------------------------------------------
+const linkAddButton = document.getElementById('linkaddbutton');
+const linkRemoveButton = document.getElementById('linkremovebutton');
+const linkList = document.getElementById('linklist');
 
+linkAddButton.addEventListener('click', () => {
+  const linkNameInput = document.getElementById('newlinknametext');
+  const linkUrlInput = document.getElementById('newlinkurltext');
+  const linkName = linkNameInput.value.trim();
+  const linkUrl = linkUrlInput.value.trim();
+
+  if (linkName !== '' && linkUrl !== '') {
+    const newLink = document.createElement('li');
+    newLink.innerHTML = `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer">${linkName}</a>`;
+    linkList.appendChild(newLink);
+    linkNameInput.value = '';
+    linkUrlInput.value = '';
+  }
+  else {
+    alert('リンク名とURLを入力してください。');
+  }
+});
+
+linkRemoveButton.addEventListener('click', () => {
+  const checkedLinks = linkList.querySelectorAll('input[type="checkbox"]:checked');
+  checkedLinks.forEach(link => link.parentElement.remove());
+});
+//------------------------------------------------------------------------------
+
+// 日付と時刻の表示更新-----------------------------------------------------------
 function updateDateTime() {
-                const now = new Date();
-                const week_ja = ["日", "月", "火", "水", "木", "金", "土"];
-                const year = now.getFullYear();
-                const month = now.getMonth() + 1;
-                const day = now.getDate();
-                const week = week_ja[now.getDay()];
-                const hour = String(now.getHours()).padStart(2, "0");
-                const minute = String(now.getMinutes()).padStart(2, "0");
-                const second = String(now.getSeconds()).padStart(2, "0");
+  const now = new Date();
+  const week_ja = ["日", "月", "火", "水", "木", "金", "土"];
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const week = week_ja[now.getDay()];
+  const hour = String(now.getHours()).padStart(2, "0");
+  const minute = String(now.getMinutes()).padStart(2, "0");
+  const second = String(now.getSeconds()).padStart(2, "0");
 
-                document.getElementById("datetime").textContent =
-                    `${year}/${month}/${day}(${week}) ${hour}:${minute}:${second}`;
-            }
+  document.getElementById("datetime").textContent =
+    `${year}/${month}/${day}(${week}) ${hour}:${minute}:${second}`;
+}
 
-            updateDateTime();
-            setInterval(updateDateTime, 1000); // 1秒ごとに更新
+updateDateTime();
+setInterval(updateDateTime, 1000); // 1秒ごとに更新
