@@ -28,7 +28,7 @@
 }
 
 div#spWrapper > nav {
-    display: inline-block;
+    display: block;
     z-index: 1000;
     position: fixed;
     top: 0;
@@ -39,7 +39,7 @@ div#spWrapper > nav {
     line-height: 1.6em;
   }
  div#spWrapper > nav > div#logo > h1 {
-    display: block;
+    display: inline-block;
     position: absolute;
     left: 7.5vw;
     width: 43vw;
@@ -48,6 +48,7 @@ div#spWrapper > nav {
     color: #00c6ff;
     font-size: 36px;
     letter-spacing: 1px;
+    white-space: nowrap;
   }
   div#spWrapper > nav > div#logo > h1 span { /* 2025/10/17自力解決☆ */
     color: #ffbb00;
@@ -128,6 +129,11 @@ div#spWrapper > nav > div#nav_switch.active + div#sidemenu_list {
 	word-break: break-word;
 }
 
+.hidden {
+  display: none;
+}
+
+
 
 
         /*リンク集*/
@@ -184,7 +190,9 @@ div#spWrapper > main > #links > #newlinkurltext {
 }
 
 div#spWrapper > main > #links > #linkaddbutton,
-div#spWrapper > main > #links > #linkremovebutton {
+div#spWrapper > main > #links > #linkremovebutton,
+div#spWrapper > main > #links > #linkeditbutton
+{
   background-color: #0078ff;
   color: white;
   border: none;
@@ -216,13 +224,13 @@ div#spWrapper > main > #todoapp {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-div#spWrapper > main > #tasklist {
+div#spWrapper > main > div#todoapp >#tasklist {
   list-style: none;
   padding: 0;
   margin-bottom: 1rem;
 }
 
-div#spWrapper > main > #tasklist li {
+div#spWrapper > main > div#todoapp >#tasklist li {
   padding: .3rem 0;
 }
 
@@ -234,7 +242,7 @@ div#spWrapper > main > div#todoapp > #newtasktext {
 }
 
 div#spWrapper > main > div#todoapp > #newtaskaddbutton,
-div#spWrapper > main > div#todoapp > #newtaskremovebutton {
+div#spWrapper > main > div#todoapp > #taskremovebutton{
   background-color: #0078ff;
   color: white;
   border: none;

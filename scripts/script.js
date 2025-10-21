@@ -3,7 +3,7 @@
 
 // tasklist部分の処理-------------------------------------------------------------
 const taskAddButton = document.getElementById('newtaskaddbutton');
-const taskRemoveButton = document.getElementById('newtaskremovebutton');
+const taskRemoveButton = document.getElementById('taskremovebutton');
 const taskList = document.getElementById('tasklist');
 
 taskAddButton.addEventListener('click', () => {
@@ -31,6 +31,21 @@ taskRemoveButton.addEventListener('click', () => {
 const linkAddButton = document.getElementById('linkaddbutton');
 const linkRemoveButton = document.getElementById('linkremovebutton');
 const linkList = document.getElementById('linklist');
+const linkEditButton = document.getElementById('linkeditbutton');
+
+linkEditButton.addEventListener('click', () => {
+  document.getElementById('newlinknametext').classList.toggle('hidden');
+  document.getElementById('newlinkurltext').classList.toggle('hidden');
+  document.getElementById('linkaddbutton').classList.toggle('hidden');
+  document.getElementById('linkremovebutton').classList.toggle('hidden');
+
+  if (linkEditButton.value === '編集') {
+    linkEditButton.value = '完了';
+  }
+  else {
+    linkEditButton.value = '編集';
+  }
+});
 
 linkAddButton.addEventListener('click', () => {
   const linkNameInput = document.getElementById('newlinknametext');
